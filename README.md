@@ -38,7 +38,7 @@ Solana Ultimate Ai Trade Bot is designed for those who truly want to maximize th
 
 ### Windows Users 
 
-1. Download the packaged version from [here](https://github.com/PumpExpert/All-in-One-Solana-Bot/releases/download/V4.0.0/SolAiBot_Mac.zip). 
+1. Download the packaged version from [here](https://github.com/PumpExpert/All-in-One-Solana-Bot/releases/download/V4.0.0/SolAiBot_Windows.zip). 
 2. Extract the ZIP file. 
 3. Double-click on the `SolAiBot.exe` application to start the bot. 
 
