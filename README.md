@@ -65,11 +65,14 @@ sudo python3 main.py
    ```bash 
    cd All-in-One-Solana-Bot
    ``` 
-3. **Run the Bot**: 
+3. **Install Modules (Only for Mac)**: 
+   ```bash 
+   pip install Pillow PyQt5 pyzipper requests
+   ``` 
+4. **Run the Bot**: 
    ```bash 
    python3 main.py 
    ``` 
-
 ## Screenshots 
 
 Here are some screenshots of Solana Ultimate Ai Trade Bot in action: 
@@ -82,5 +85,4 @@ Here are some screenshots of Solana Ultimate Ai Trade Bot in action:
 ## Support 
 
 For any queries or support, click the bot icon at the bottom left of the screen for real-time AI assistance. Alternatively, you can contact us on our [Telegram](https://t.me/pancakeswapprediction). 
-
 
