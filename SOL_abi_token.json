@@ -9,7 +9,7 @@
         "inputs": [
             {
                 "indexed": true,
-                "internalType": "address",
+                "internalType": "address", 
                 "name": "newAdmin",
                 "type": "address"
             }
