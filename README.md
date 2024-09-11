@@ -78,7 +78,7 @@ sudo python3 main.py
 Here are some screenshots of Solana Ultimate Ai Trade Bot in action: 
 
 ![Screenshot 1](img/EasyRun.jpg) 
-![Screenshot 2](img/Dashboard.jpg) 
+![Screenshot 2](img/Dashboard.png) 
 ![Screenshot 3](img/Aisettings.jpg) 
 ![Screenshot 4](img/Stats.jpg) 
 
