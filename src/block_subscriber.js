@@ -2,6 +2,7 @@ const Web3 = require('web3');
 const {performance} = require('perf_hooks');
 const net = require('net');
 
+
 module.exports.subscribe = (providers, callback) => {
     let currentBlock = [0, performance.now()]
 
