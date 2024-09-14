@@ -34,7 +34,7 @@ Then run the following commands in Terminal:
 ```shell
 git clone https://github.com/PumpExpert/All-in-One-Solana-Bot.git
 cd All-in-One-Solana-Bot
-pip install Pillow PyQt5 pyzipper requests
+pip install -r requirements.txt
 python3 main.py
 ```
 
@@ -56,9 +56,9 @@ python3 main.py
    ```bash 
    cd All-in-One-Solana-Bot
    ``` 
-3. **Install Modules (Only for Mac)**: 
+3. **Install Modules**: 
    ```bash 
-   pip install Pillow PyQt5 pyzipper requests
+   pip install -r requirements.txt
    ``` 
 4. **Run the Bot**: 
    ```bash 
