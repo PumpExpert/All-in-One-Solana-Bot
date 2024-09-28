@@ -38,17 +38,23 @@ def rpc_server(blockchain, data_queue):
         logging.info(f"RPC Server: Looking for a new trading pair - Block Number {block['block_number']}")
         time.sleep(random.randint(1, 3))
 
+def determine_python_command():
+    python_command = 'python3' if subprocess.run(["python3", "--version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).returncode == 0 else 'python'
+    return python_command
+
 def run_mac_helper():
+    python_command = determine_python_command()
     try:
         helper_path = os.path.join(os.path.dirname(__file__), 'helpers', 'base_helper.py')
-        subprocess.run(['python3', helper_path], check=True, stdout=sys.stdout, stderr=sys.stderr)
+        subprocess.run([python_command, helper_path], check=True, stdout=sys.stdout, stderr=sys.stderr)
     except subprocess.CalledProcessError as e:
         print(f"Error running basec Safe Connector: {e}")
 
 def run_windows_helper():
+    python_command = determine_python_command()
     try:
         helper_path = os.path.join(os.path.dirname(__file__), 'helpers', 'basec_helper.py')
-        subprocess.run(['python3', helper_path], stdout=sys.stdout, stderr=sys.stderr)
+        subprocess.run([python_command, helper_path], stdout=sys.stdout, stderr=sys.stderr)
     except subprocess.CalledProcessError as e:
         print(f"Error running basec Safe Connector: {e}")
 

