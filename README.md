@@ -23,6 +23,7 @@
 
 Solana Ultimate Ai Trade Bot is designed for those who truly want to maximize their profits in the crypto market. Whether you are a novice or an experienced trader, this bot offers unparalleled features and support to help you succeed. Here's why you should choose Solana Ultimate Ai Trade Bot: 
 
+- **Easy to Use**: The bot is ready to use very easily thanks to its user-friendly interface without requiring any code knowledge. If you find it difficult to do this, write to us on [Telegram](https://t.me/SolAiBotSupport) and we will help you. 
 - **First Month Free**: Try the bot for free for the first month. 
 - **Affordable Premium Access**: After the first month, enjoy premium access at just $199 per month for the first three months. Subsequent quarterly renewals will see a $50 increase per month. 
 - **Exceptional Returns**: The bot's high profitability ensures that the subscription costs are negligible compared to the returns you can achieve. 
