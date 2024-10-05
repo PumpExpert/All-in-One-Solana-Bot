@@ -17,7 +17,7 @@
 - **Token Creation and Management**: Create and manage your own tokens on the Solana network. 
 - **GPT-4.0 Support**: Get real-time AI support for setting up and configuring the bot. Click the bot icon at the bottom left of the screen for live assistance. 
 - **Cross-Platform**: Compatible with both Mac and Windows operating systems. 
-- **Live Support**: If you need to speak with a developer, you can message us 24/7 on our Telegram at [Sol Si Bot Full Support](https://t.me/SolAiBotSupport). 
+- **Live Support**: If you need to speak with a developer, you can message us 24/7 on our Telegram at [Sol Ai Bot Full Support](https://t.me/SolAiBotSupport). 
 
 ## Why Solana Ultimate Ai Trade Bot? 
 
