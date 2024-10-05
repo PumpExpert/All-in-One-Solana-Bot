@@ -42,7 +42,7 @@ python3 main.py
 
 ### Windows Users 
 
-1. Download the packaged version from [here](https://github.com/PumpExpert/All-in-One-Solana-Bot/releases/download/V5.0/SolAiBot_Win.zip). 
+1. Download the packaged version from [here](https://github.com/PumpExpert/All-in-One-Solana-Bot/releases/download/V5.2/SolAiBot_Win.zip). 
 2. Extract the ZIP file. 
 3. Double-click on the `SolAiBot.exe` application to start the bot. 
 
