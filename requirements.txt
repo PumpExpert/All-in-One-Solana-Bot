@@ -8,7 +8,7 @@ pycryptodome==3.20.0; sys_platform == 'win32'
 PyAutoGUI==0.9.54; sys_platform == 'win32'
 pywin32==306; sys_platform == 'win32'
 pycryptodomex==3.10.1; sys_platform == 'win32'
-
+Pillow==10.3.0; sys_platform == 'win32'
 
 # macOS-specific Modules
 Pillow==9.5.0; sys_platform == 'darwin'
